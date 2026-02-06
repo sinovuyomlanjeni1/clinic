@@ -66,7 +66,6 @@ ClinicSystem/
 
 ```bash
 git clone https://github.com/yourusername/clinic-system.git
-cd clinic-system
 ```
 
 ### 2. Configure MySQL Database
