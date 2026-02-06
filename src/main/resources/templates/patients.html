@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Patients</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo">
+        <h1>Clinic System</h1>
+        <p>Patients Management</p>
+    </div>
+
+    <nav class="nav-links">
+        <a th:href="@{/}">Dashboard</a>
+        <a th:href="@{/patients}">Patients</a>
+        <a th:href="@{/doctors}">Doctors</a>
+        <a th:href="@{/appointments}">Appointments</a>
+
+    </nav>
+</header>
+
+<main class="container">
+
+    <div class="page-title">
+        <h2>Patients</h2>
+        <a href="/patients/new" class="btn-primary">+ Add Patient</a>
+    </div>
+
+    <div class="table-box">
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th style="text-align:center;">Actions</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="patient : ${patients}">
+                <td th:text="${patient.name}"></td>
+                <td th:text="${patient.email}"></td>
+                <td th:text="${patient.phone}"></td>
+                <td style="text-align:center;">
+                    <a th:href="@{/patients/edit/{id}(id=${patient.id})}" class="btn-secondary">Edit</a>
+                    <a th:href="@{/patients/delete/{id}(id=${patient.id})}" class="btn-danger">Delete</a>
+                </td>
+            </tr>
+
+            <tr th:if="${patients.size() == 0}">
+                <td colspan="4" style="text-align:center;">No patients registered yet.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

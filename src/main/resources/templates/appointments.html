@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Appointments</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo">
+        <h1>Clinic System</h1>
+        <p>Appointments Management</p>
+    </div>
+
+    <nav class="nav-links">
+        <a th:href="@{/}" class="nav-btn">Dashboard</a>
+        <a th:href="@{/patients}" class="nav-btn">Patients</a>
+        <a th:href="@{/doctors}" class="nav-btn">Doctors</a>
+        <a th:href="@{/appointments}" class="nav-btn active">Appointments</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <div class="page-title">
+        <h2>Appointments</h2>
+        <a th:href="@{/appointments/new}" class="btn-primary">+ Book Appointment</a>
+    </div>
+
+    <div class="table-box">
+        <table>
+            <thead>
+            <tr>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Date & Time</th>
+                <th>Status</th>
+                <th style="text-align:center;">Actions</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="appointment : ${appointments}">
+                <td th:text="${appointment.patient.name}"></td>
+                <td th:text="${appointment.doctor.name}"></td>
+
+                <td th:text="${#temporals.format(appointment.dateTime, 'dd/MM/yyyy HH:mm')}"></td>
+
+                <!-- STATUS WITH COLORS -->
+                <td>
+                    <span th:classappend="${appointment.status == 'BOOKED'} ? 'status-booked' :
+                                         (${appointment.status == 'COMPLETED'} ? 'status-completed' :
+                                         'status-cancelled')"
+                          th:text="${appointment.status}">
+                    </span>
+                </td>
+
+                <!-- ACTION BUTTONS -->
+                <td style="text-align:center;">
+                    <a th:href="@{/appointments/edit/{id}(id=${appointment.id})}"
+                       class="btn-secondary">
+                        Edit
+                    </a>
+
+                    <a th:href="@{/appointments/cancel/{id}(id=${appointment.id})}"
+                       class="btn-danger">
+                        Cancel
+                    </a>
+                </td>
+            </tr>
+
+            <!-- EMPTY MESSAGE -->
+            <tr th:if="${appointments.size() == 0}">
+                <td colspan="5" style="text-align:center;">
+                    No appointments booked yet.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+

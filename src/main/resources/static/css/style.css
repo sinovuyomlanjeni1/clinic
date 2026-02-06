@@ -1,0 +1,287 @@
+/* GENERAL */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ffffff;
+    color: #333;
+}
+
+/* HEADER */
+.main-header {
+    background: #0a1f44; /* navy */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* NAV */
+.nav-links {
+    margin-top: 15px;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 5px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    background: #ffffff;
+    color: #0a1f44;
+    transition: 0.2s;
+}
+
+.nav-btn:hover {
+    background: #dbe8ff;
+}
+
+.nav-btn.active {
+    background: #1e88e5;
+    color: white;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px;
+}
+
+/* PAGE TITLE */
+.page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.page-title h2 {
+    margin: 0;
+    font-size: 26px;
+    color: #444;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background: #1e88e5;
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #1565c0;
+}
+
+.btn-secondary {
+    background: #43a047;
+    color: white;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-right: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #2e7d32;
+}
+
+.btn-danger {
+    background: #e53935;
+    color: white;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-danger:hover {
+    background: #b71c1c;
+}
+
+/* TABLE */
+.table-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f4f4f4;
+    color: #222;
+    padding: 12px;
+    text-align: left;
+    font-size: 15px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #f9fbff;
+}
+
+/* FORMS */
+.form-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.12);
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-box h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #444;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+/* FORM ACTIONS */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+/* ERROR */
+.error-message {
+    background: #ffe6e6;
+    border: 1px solid #ffb3b3;
+    padding: 12px;
+    border-radius: 6px;
+    color: #b00000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* DASHBOARD */
+.welcome-box {
+    background: #f3f7ff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 6px solid #1e88e5;
+}
+
+.welcome-box h2 {
+    margin: 0;
+    color: #0a1f44;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #0a1f44;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #f4f4f4;
+    color: #666;
+    margin-top: 30px;
+}
+
+/* STATUS COLORS */
+.status-booked {
+    background: #1e88e5;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    display: inline-block;
+    text-align: center;
+    min-width: 90px;
+}
+
+.status-completed {
+    background: #43a047;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    display: inline-block;
+    text-align: center;
+    min-width: 90px;
+}
+
+.status-cancelled {
+    background: #e53935;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    display: inline-block;
+    text-align: center;
+    min-width: 90px;
+}
+

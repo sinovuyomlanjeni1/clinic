@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo">
+        <h1>Clinic System</h1>
+        <p>Book Appointment</p>
+    </div>
+
+    <nav class="nav-links">
+        <a th:href="@{/}">Dashboard</a>
+        <a th:href="@{/patients}">Patients</a>
+        <a th:href="@{/doctors}">Doctors</a>
+        <a th:href="@{/appointments}">Appointments</a>
+
+    </nav>
+</header>
+
+<main class="container">
+
+    <div class="form-box">
+        <h2>Book Appointment</h2>
+
+        <p th:if="${error}" class="error-message" th:text="${error}"></p>
+
+        <form th:action="@{/appointments}" method="post">
+
+            <div class="form-group">
+                <label>Select Patient</label>
+                <select name="patientId" required>
+                    <option value="" disabled selected>Select Patient</option>
+                    <option th:each="patient : ${patients}"
+                            th:value="${patient.id}"
+                            th:text="${patient.name}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Select Doctor</label>
+                <select name="doctorId" required>
+                    <option value="" disabled selected>Select Doctor</option>
+                    <option th:each="doctor : ${doctors}"
+                            th:value="${doctor.id}"
+                            th:text="${doctor.name + ' - ' + doctor.specialization}">
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Date & Time</label>
+                <input type="datetime-local" name="dateTime" required>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Book Appointment</button>
+                <a href="/appointments" class="btn-danger">Cancel</a>
+            </div>
+
+        </form>
+    </div>
+
+</main>
+
+</body>
+</html>

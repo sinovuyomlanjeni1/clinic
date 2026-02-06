@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Clinic Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo">
+        <h1>Clinic System</h1>
+        <p>Appointment Booking Dashboard</p>
+    </div>
+
+    <nav class="nav-links">
+        <a th:href="@{/}">Dashboard</a>
+        <a th:href="@{/patients}">Patients</a>
+        <a th:href="@{/doctors}">Doctors</a>
+        <a th:href="@{/appointments}">Appointments</a>
+
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="welcome-box">
+        <h2>Welcome </h2>
+        <p>
+            Manage patients, doctors, and appointments easily.
+            This system helps clinics stay organized and avoid double bookings.
+        </p>
+    </section>
+
+    <section class="cards-grid">
+        <div class="card">
+            <h3>Patients</h3>
+            <p>Register patients and manage their details.</p>
+            <a href="/patients" class="btn-primary">Go to Patients</a>
+        </div>
+
+        <div class="card">
+            <h3>Doctors</h3>
+            <p>Add doctors and their specializations.</p>
+            <a href="/doctors" class="btn-primary">Go to Doctors</a>
+        </div>
+
+        <div class="card">
+            <h3>Appointments</h3>
+            <p>Book appointments and prevent double booking.</p>
+            <a href="/appointments" class="btn-primary">Go to Appointments</a>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>Clinic Appointment Booking System © 2025</p>
+    <p>By Sinovuyo Mlanjeni</p>
+</footer>
+
+</body>
+</html>
